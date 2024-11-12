@@ -2,7 +2,6 @@
 # Movement Follower Node
 
 
-
 ## Getting Started
 
 
@@ -43,6 +42,10 @@ AWS_DEFAULT_REGION=us-west-1 # change this to match the region of the sync bucke
 AWS_REGION=us-west-1 # change this to match the region of the sync bucket
 ```
 
+**YOU NEED CREATE AWS account to get AWS_ACCESS_KEY_ID & AWS_SECRET_ACCESS_KEY in Security Credentials**
+![enter image description here](https://raw.githubusercontent.com/diszell2008/movement-node-guide/refs/heads/master/account.png)
+![enter image description here](https://raw.githubusercontent.com/diszell2008/movement-node-guide/refs/heads/master/accesskey.png)
+
 Example for APTOS bardock testnet:
 ```bash
 CONTAINER_REV=102389ecfc4de1f7ec7da9902bb1758afaa2c9f6
@@ -52,9 +55,9 @@ MOVEMENT_SYNC="follower::mtnet-l-sync-bucket-sync<=>{maptos,maptos-storage,suzuk
 M1_DA_LIGHT_NODE_CONNECTION_PROTOCOL=https
 M1_DA_LIGHT_NODE_CONNECTION_HOSTNAME="m1-da-light-node.testnet.bardock.movementlabs.xyz" 
 M1_DA_LIGHT_NODE_CONNECTION_PORT=443
-# you may need to provide AWS credentials for the Amazon SDK to properly interact with the sync bucket (CREATE from 
-AWS_ACCESS_KEY_ID=xxxxxxxxxxx 
-AWS_SECRET_ACCESS_KEY=xxxxxxxx
+# you may need to provide AWS credentials for the Amazon SDK to properly interact with the sync bucket
+AWS_ACCESS_KEY_ID=xxxxxxxxxxx # Get from your AWS Account
+AWS_SECRET_ACCESS_KEY=xxxxxxxx  # Get from your AWS Account
 AWS_DEFAULT_REGION=us-west-1
 AWS_REGION=us-west-1
 ```
@@ -81,10 +84,9 @@ curl http://localhost:30731/v1
 You should see a `ledger_version` field CLOSE to the other values on the network, e.g., [https://aptos.testnet.bardock.movementlabs.xyz/v1](https://aptos.testnet.bardock.movementlabs.xyz/v1).
 
 ## Deployment and Advanced Usage
-For deployment and advanced usage, we recommend you use our [provided Ansible scripts](../../ansible/follower-node/README.md).
+For deployment and advanced usage, we recommend you use our ansible script.
 
-
-  
+**## Deployment via ansible**
 
 1. Get the container version
 ```bash
