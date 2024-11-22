@@ -67,13 +67,13 @@ To run natively you can use the following command:
 
 ```bash
 source .env
-just suzuka-full-node native build.setup.follower -t=false
+just movement-full-node native build.setup.follower -t=false
 ```
 
 To run with containers you can use the following command:
 
 ```bash
-just suzuka-full-node docker-compose follower
+just movement-full-node docker-compose follower
 ```
 
 To check on the status of the service under either runner, run:
@@ -111,5 +111,5 @@ ansible-playbook --inventory ec2-54-215-191-59.us-west-1.compute.amazonaws.com, 
                  --user ubuntu  \
                  --extra-vars "movement_container_version=${CONTAINER_REV}" \
                  --extra-vars "user=ubuntu" \
-                 docs/movement-node/run/ansible/suzuka-full-node.yml
+                 docs/movement-node/run/ansible/movement-full-node.yml
 ```
